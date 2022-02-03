@@ -1,0 +1,166 @@
+@font-face {
+  font-family: "digital";
+  src: url("../font/digital-7 (mono).ttf") format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "digital",sans-serif;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  background: linear-gradient(234deg, #4158d0, #c850c0, #ffcc70);
+  background-size: 600% 600%;
+  animation: degrade 20s ease infinite;
+}
+
+@keyframes degrade {
+  0%{background-position:0% 78%}
+  50%{background-position:100% 23%}
+  100%{background-position:0% 78%}
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes ponteiro {
+  from { transform: rotate(0);  } to { transform: rotate(360deg); }
+}
+
+.girar{
+  animation: ponteiro 1s linear infinite;
+}
+
+#clock-hand{
+  transform-origin: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+}
+
+.timer{
+  height: 80%;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+  background: #fff;
+  padding: 2em;
+  border-radius: 10px;
+
+}
+
+.relogio {
+  font-size: 5em;
+}
+
+.pausado {
+  color: red;
+  animation: blinker 1s step-start infinite;
+}
+
+.btn-group{
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: calc(100%/3);
+}
+
+.headline{
+  flex: 1;
+  text-align: center;
+  height: calc(100%/3);
+}
+.timerwatch{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100%/3);
+}
+
+#Layer_1{
+  height: inherit;
+}
+
+#Play{
+  height: inherit;
+}
+
+.btn{
+  height: 100px;
+  width: 100px;
+  background-image: linear-gradient(to right, #4158D0 0%, #C850C0  46%, #FFCC70  100%);
+  border-radius: 50%;
+  padding: 0;
+  box-shadow: 0 0 20px #eee;
+  border: none;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+}
+.btn i{
+  font-size: 2.5em;
+}
+
+.btn:hover {
+   cursor: pointer;
+   background-position: right center;
+   color: #fff;
+   text-decoration: none;
+ }
+
+@media (max-width: 768px){
+
+  .timer{
+    width: 80vw;
+
+  }
+}
+
+@media (max-width: 560px){
+
+  .timer{
+    width: 95vw;
+
+  }
+
+  body{
+    font-size: 0.9em;
+  }
+
+  .btn{
+    height: 70px;
+    width: 70px;
+  }
+}
+
+@media (max-height: 560px){
+
+  .timer{
+    width: 80vw;
+
+  }
+
+  body{
+    font-size: 0.9em;
+  }
+
+  .btn{
+    height: 60px;
+    width: 60px;
+  }
+}
